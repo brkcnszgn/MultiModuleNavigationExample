@@ -10,22 +10,5 @@
 
     <include app:graph="@navigation/dashboard_flow" />
 
-    <action
-        android:id="@+id/action_global_home_flow"
-        app:destination="@id/home_flow"
-        app:popUpTo="@id/main_nav_graph"
-        app:enterAnim="@anim/nav_default_enter_anim"
-        app:exitAnim="@anim/nav_default_exit_anim" />
 
-    <action
-        app:popUpTo="@id/main_nav_graph"
-        android:id="@+id/action_global_dashboard_flow"
-        app:destination="@id/dashboard_flow"
-        app:enterAnim="@anim/nav_default_enter_anim"
-        app:exitAnim="@anim/nav_default_exit_anim" >
-
-        <argument
-            android:name="msg"
-            app:argType="string" />
-    </action>
 </navigation>

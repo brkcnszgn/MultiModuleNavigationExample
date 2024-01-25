@@ -14,10 +14,16 @@ fun NavController.deepLinkNavigateTo(
     deepLinkDestination: DeepLinkDestination,
     popUpTo: Boolean = false
 ) {
-    val builder = NavOptions.Builder()
+    val builder = NavOptions.Builder().apply {
+        setEnterAnim(androidx.navigation.ui.R.anim.nav_default_enter_anim)
+        setExitAnim(androidx.navigation.ui.R.anim.nav_default_exit_anim)
+        setPopEnterAnim(androidx.navigation.ui.R.anim.nav_default_pop_enter_anim)
+        setPopExitAnim(androidx.navigation.ui.R.anim.nav_default_pop_exit_anim)
+
+    }
 
     if (popUpTo) {
-        builder.setPopUpTo(graph.startDestination, true)
+        builder.setPopUpTo(graph.startDestinationId, true)
     }
 
     navigate(
